@@ -1,0 +1,24 @@
+<div layout-padding>
+    <h1>Index</h1>
+    <div ng-repeat="heading in headings">
+        <h3>{{ heading.displayname }}</h3>
+        <md-list>
+            <md-list-item ng-repeat="section in heading.sections" class="md-2-line md-whiteframe-1dp">
+                <ng-letter-avatar ui-sref="section({section: section.path})" href="/section/{{ section.path }}"  style="background-color: rgba(255, 255, 255, 0) !important;" class="md-avatar-icon" dynamic="true" charCount="2" data="{{ section.type }}" shape="round"></ng-letter-avatar>
+                <div class="md-list-item-text" layout="column">
+                    <h3 ui-sref="section({section: section.path})" href="/section/{{ section.path }}" >{{ section.name }}</h3>
+                    <p>Type: {{ section.type }}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </div>
+    <md-list>
+        <md-list-item ng-repeat="section in sections" class="md-2-line md-whiteframe-1dp">
+            <ng-letter-avatar ui-sref="section({section: section.path})" href="/section/{{ section.path }}"  style="background-color: rgba(255, 255, 255, 0) !important;" class="md-avatar-icon" dynamic="true" charCount="2" data="{{ section.type }}" shape="round"></ng-letter-avatar>
+            <div class="md-list-item-text" layout="column">
+                <h3 ui-sref="section({section: section.path})" href="/section/{{ section.path }}" >{{ section.name }}</h3>
+                <p>Type: {{ section.type }}</p>
+            </div>
+        </md-list-item>
+    </md-list>
+</div>
